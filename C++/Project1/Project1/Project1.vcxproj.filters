@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\demo01">
+      <UniqueIdentifier>{ccdc7e7a-9c08-4203-9806-eee843392f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\题源">
+      <UniqueIdentifier>{ddcfb4f2-f512-4a68-9eba-08ec821bcaeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\题源\程序设计题">
+      <UniqueIdentifier>{dac4cbe4-83a2-42f8-9b9d-c6a92fe1ae75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\题源\程序阅读题">
+      <UniqueIdentifier>{145bf913-0828-4653-9e92-247d029c84e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\题源\程序填空">
+      <UniqueIdentifier>{4fb0098d-ed22-4fd0-859e-4ff0b3904c5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\题源\程序改错">
+      <UniqueIdentifier>{d3394279-db07-405e-9365-67a91a885440}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\题源\数据结构代码总结">
+      <UniqueIdentifier>{aa4e6381-c986-4eed-8e30-0ca6c90da517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\题源\数据结构代码总结\单链表">
+      <UniqueIdentifier>{d34109df-7538-49f5-bce0-43444615bff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\题源\数据结构代码总结\排序">
+      <UniqueIdentifier>{2a4aa0ee-fa6b-49dd-95d0-aafbaf8729db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构">
+      <UniqueIdentifier>{c71185ee-918f-4b4a-8299-2230e4136b23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\程序设计概述、">
+      <UniqueIdentifier>{82060fd3-f6c9-4053-ab5d-ff7fc896e58a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\程序设计的三种基本结构">
+      <UniqueIdentifier>{a49d7c91-b035-47e1-9c4f-54ecded71063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\函数与数组">
+      <UniqueIdentifier>{efd6baa6-2c0c-4594-b03d-084a10811428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\指针与结构体">
+      <UniqueIdentifier>{12baa693-dc5e-4fd4-a01d-337007837d49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\文件">
+      <UniqueIdentifier>{6f56831c-e198-46f5-ac81-507735105db7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\程序设计的三种基本结构\级数展开？">
+      <UniqueIdentifier>{4c9b1722-8213-48d3-884f-2d5b7986dc94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\函数与数组\二维数组定义及其应用？">
+      <UniqueIdentifier>{92e34e9b-be71-4e96-8f32-dbaa2bd2dea3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\指针与结构体\结构体数组">
+      <UniqueIdentifier>{8063a0f2-b74f-4f0d-b3e2-bc5b78ce3313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\指针与结构体\指针操作结构体数组">
+      <UniqueIdentifier>{f4f5fea3-d9ce-4a7f-a43b-1d2989a54d41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\文件\文件的基本概念以及文件操作的基本方法">
+      <UniqueIdentifier>{c9a7a3f5-3ef7-45a3-8b99-71c3024720d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\函数与数组\排序">
+      <UniqueIdentifier>{2141fcea-a2bc-4f36-9efb-d9ad800a3e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\动态内存操作">
+      <UniqueIdentifier>{66404710-97fc-46e6-ba38-f4acf33086f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\知识结构\单链表及其应用">
+      <UniqueIdentifier>{9b0db30b-7c95-4495-9aa3-a39541bd7623}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\题源\经典100题">
+      <UniqueIdentifier>{5268f951-d1e5-44fd-91aa-4cf6ddd1888a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="error.cpp">
+      <Filter>Source Files\demo01</Filter>
+    </ClCompile>
+    <ClCompile Include="orderArgument.cpp">
+      <Filter>Source Files\demo01</Filter>
+    </ClCompile>
+    <ClCompile Include="recursion.cpp">
+      <Filter>Source Files\demo01</Filter>
+    </ClCompile>
+    <ClCompile Include="variable.cpp">
+      <Filter>Source Files\demo01</Filter>
+    </ClCompile>
+    <ClCompile Include="index.cpp">
+      <Filter>Source Files\题源\数据结构代码总结\排序</Filter>
+    </ClCompile>
+    <ClCompile Include="singlyLinkedList .cpp">
+      <Filter>Source Files\题源\数据结构代码总结\单链表</Filter>
+    </ClCompile>
+    <ClCompile Include="singleLinkedListWithHead.cpp">
+      <Filter>Source Files\题源\数据结构代码总结\单链表</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicAddress.cpp">
+      <Filter>Source Files\知识结构\动态内存操作</Filter>
+    </ClCompile>
+    <ClCompile Include="LanguageInstance.cpp">
+      <Filter>Source Files\demo01</Filter>
+    </ClCompile>
+    <ClCompile Include="LearnLinkList.cpp">
+      <Filter>Source Files\知识结构\单链表及其应用</Filter>
+    </ClCompile>
+    <ClCompile Include="correction.cpp">
+      <Filter>Source Files\题源\程序改错</Filter>
+    </ClCompile>
+    <ClCompile Include="tainkong.cpp">
+      <Filter>Source Files\题源\程序填空</Filter>
+    </ClCompile>
+    <ClCompile Include="yuedu.cpp">
+      <Filter>Source Files\题源\程序阅读题</Filter>
+    </ClCompile>
+    <ClCompile Include="sheji.cpp">
+      <Filter>Source Files\题源\程序设计题</Filter>
+    </ClCompile>
+    <ClCompile Include="100.cpp">
+      <Filter>Source Files\题源\经典100题</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Source Files\题源\经典100题</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt">
+      <Filter>Source Files\demo01</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
