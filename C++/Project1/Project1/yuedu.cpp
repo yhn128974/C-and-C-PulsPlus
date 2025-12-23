@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<string.h>
 #include<math.h>
+=======
+////1.下面程序的输出结果是： 将X,Y的值互换
+//#include <stdio.h>
+>>>>>>> d69cefcbff758ceb280363f3aeb49a2d0776ae41
 //int main()
 //{
 //	int x, y, t;
@@ -179,6 +184,7 @@
 //	}
 //}
 
+<<<<<<< HEAD
 //void fun() {
 //	char n;
 //	scanf("%c", &n);
@@ -292,3 +298,6 @@
 //	int data;
 //	Node* next;
 //};
+=======
+
+>>>>>>> d69cefcbff758ceb280363f3aeb49a2d0776ae41

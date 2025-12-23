@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<string.h>
 
+=======
+>>>>>>> d69cefcbff758ceb280363f3aeb49a2d0776ae41
 ////第1 题 （10.0 分）
 ///*-----------------------------------
 //功能：根据整型形参m，计算如下公式的值：
@@ -257,6 +260,7 @@ examination.”。
 1). int k=0;
 2). if ( *p == ' ' )
 3). *(p -1 ) = toupper( *( p - 1 ));
+<<<<<<< HEAD
 */
 
 //int main() {
@@ -325,3 +329,6 @@ examination.”。
 //
 //
 //}
+=======
+*/
+>>>>>>> d69cefcbff758ceb280363f3aeb49a2d0776ae41

@@ -1,10 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
+<<<<<<< HEAD
 #include<string.h>
 #include<math.h>
 #include<stdlib.h>
 #include<stdbool.h>
 
+=======
+>>>>>>> d69cefcbff758ceb280363f3aeb49a2d0776ae41
 //1.求1 + 2 + 3 + ... + n 的值，其中n 由用户输入。
 //考查循环相关知识。用for 循环，while 循环，
 //do...while 循环均可编写程序。
@@ -54,6 +57,7 @@
 //
 //}
 
+<<<<<<< HEAD
 //程序题
 ///键盘输入一个字符，判断该字符的类型
 //int main() {
@@ -458,3 +462,6 @@
 //	printList(head);
 //	return 0;
 //}
+=======
+
+>>>>>>> d69cefcbff758ceb280363f3aeb49a2d0776ae41

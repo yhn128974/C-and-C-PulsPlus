@@ -142,8 +142,11 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />
+<<<<<<< HEAD
     <Text Include="data02.txt" />
     <Text Include="data03.txt" />
+=======
+>>>>>>> d69cefcbff758ceb280363f3aeb49a2d0776ae41
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
