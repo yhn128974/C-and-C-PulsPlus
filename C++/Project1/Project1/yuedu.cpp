@@ -1,5 +1,7 @@
-////1.下面程序的输出结果是： 将X,Y的值互换
-//#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
 //int main()
 //{
 //	int x, y, t;
@@ -177,4 +179,116 @@
 //	}
 //}
 
+//void fun() {
+//	char n;
+//	scanf("%c", &n);
+//	if (n != '.')
+//	{
+//		fun();
+//	}printf("%c\n", n);
+//
+//
+//}
+//int main() {
+//	fun();
+//	return 0;
+//}
 
+
+//int x;
+//int fun1(int a, int b) {
+//	int result = ++x + (a + b) * 2;
+//	printf("fun1:%d\n", result);
+//	return result;
+//
+//}
+//int fun2(int a, int b) {
+//	int result = a - b + x;
+//	printf("fun2:%d\n", result);
+//	return result;
+//}
+//int fun3(int a, int b) {
+//	int reslut = (a - b) * 3 + x++;
+//	printf("fun3:%d\n", reslut);
+//	return reslut;
+//}
+//int main() {
+//	int a, b, x = 10;
+//	scanf("%d %d", &a, &b);
+//	printf("%d\n", fun2(fun1(a, b), fun3(a, b)) + x);
+//	return 0;
+//}
+
+
+//模拟题一 11
+//#define N 10
+//
+//int main() {
+//	int arr[N][N];
+//	for (int i = 0; i < N - 1; i++)
+//	{
+//		for (int j = 0; j < N - 1; j++) {
+//			arr[i][j] = (i + 1) * (j + 1);
+//		}
+//	}
+//
+//	printf("%d", *(*arr + 2) + 3);
+//}
+
+//模拟题一 12
+//int main() {
+//	FILE* fp;
+//	int i, k = 0;
+//	fp = fopen("data.txt", "w");
+//	for (int i = 4; i <= 8; i++)
+//	{
+//		fprintf(fp, "% d", i);
+//
+//	}
+//	fclose(fp);
+//	fp = fopen("data.txt", "r");
+//	fseek(fp, 0, SEEK_SET);//文件指针重新指向文件开头,fseek函函数用于移动文件指针到指定位置
+//	fprintf(fp, "%d", -1);//在文件开头写入-1，覆盖原来的4
+//	fclose(fp);
+//	return 0;
+//}
+
+//int main() {
+//	int n, m;
+//	int a[100][100];
+//	scanf("%d %d", &n, &m);
+//	for (int i = 0; i < n; i++)
+//	{
+//		for (int j = 0; j < m; j++) {
+//			scanf("%d", &a[i][j]);
+//		}
+//
+//	}
+//	for (int i = 0; i < m; i++)
+//	{
+//		for (int j = 0; j < n; j++) {
+//			printf("%d ", a[j][i]);
+//		}
+//		printf("\n");
+//	}
+//}
+
+//统计一次数字中某个数出现的次数
+//int main() {
+//	int n, k, count = 0;
+//	scanf("%d %d", &n, &k);
+//	while (n)
+//	{
+//		if (n % 10 == k)
+//			count++;
+//		n = n / 10;
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
+//
+//struct Node
+//{
+//	int data;
+//	Node* next;
+//};

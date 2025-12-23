@@ -1,8 +1,9 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
+#include<string.h>
+#include<math.h>
+#include <time.h>
 /*
 题目：利用条件运算符的嵌套来完成此题：学习成绩>=90分的同学用A表示，60-89分之间的用B表示，60分以下的用C表示。
 程序分析：(a>b)?a:b这是条件运算符的基本例子。
@@ -1578,50 +1579,631 @@ int *ptr = &x; // 错误：无法获取寄存器变量的地址*/
 //}
 
 //题目：字符串排序
-#define MAX_LEN 20 // 定义常量表示字符串的最大长度
+//#define MAX_LEN 20 // 定义常量表示字符串的最大长度
+//
+//// 函数声明：用于交换两个字符串
+//void swap(char* str1, char* str2);
+//
+//int main() {
+//	char str1[MAX_LEN], str2[MAX_LEN], str3[MAX_LEN];
+//
+//	// 提示用户输入字符串
+//	printf("请输入3个字符串，每个字符串以回车结束:\n");
+//
+//	// 使用 fgets 读取输入并去除换行符
+//	fgets(str1, sizeof(str1), stdin);
+//	str1[strcspn(str1, "\n")] = '\0'; // 去除换行符
+//
+//	fgets(str2, sizeof(str2), stdin);
+//	str2[strcspn(str2, "\n")] = '\0'; // 去除换行符
+//
+//	fgets(str3, sizeof(str3), stdin);
+//	str3[strcspn(str3, "\n")] = '\0'; // 去除换行符
+//
+//	// 对字符串进行排序 
+//	/*
+//	两个字符串自左向右逐个字符相比（按 ASCII 值大小相比较），直到出现不同的字符或遇 \0 为止。如：
+//1."A"<"B"
+//2."A"<"AB"
+//3."Apple"<"Banana"
+//4."A"<"a"
+//5."compare"<"computer"*/
+//	if (strcmp(str1, str2) > 0) swap(str1, str2);
+//	if (strcmp(str2, str3) > 0) swap(str2, str3);
+//	if (strcmp(str1, str2) > 0) swap(str1, str2);
+//
+//	// 输出排序后的结果
+//	printf("排序后的结果为：\n");
+//	printf("%s\n%s\n%s\n", str1, str2, str3);
+//
+//	return 0;
+//}
+//
+//// 交换两个字符串的内容
+//void swap(char* str1, char* str2) {
+//	char temp[MAX_LEN];
+//	strcpy(temp, str1); // 将 str1 复制到临时字符串 temp
+//	strcpy(str1, str2); // 将 str2 复制到 str1
+//	strcpy(str2, temp); // 将 temp 复制到 str2
+//}
 
-// 函数声明：用于交换两个字符串
-void swap(char* str1, char* str2);
+//80.海滩上有一堆桃子，五只猴子来分。第一只猴子把这堆桃子平均分为五份，
+// 多了一个，这只 猴子把多的一个扔入海中，拿走了一份
+// 。第二只猴子把剩下的桃子又平均分成五份，又多了 一个，它同样把多的一个扔入海中，
+// 拿走了一份，第三、第四、第五只猴子都是这样做的， 问海滩上原来最少有多少个桃子？
+//int main() {
+//	int peaches = 0; // 初始化桃子数量
+//	int found = 0;   // 标志是否找到满足条件的桃子数量
+//	// 从1开始尝试不同的桃子数量
+//	while (!found) {
+//		peaches++; // 增加桃子数量
+//		int remaining = peaches; // 剩余的桃子数量
+//		int valid = 1; // 标志当前桃子数量是否有效
+//		// 模拟五只猴子的分桃过程
+//		for (int i = 0; i < 5; i++) {
+//			if ((remaining - 1) % 5 == 0) { // 检查是否能平均分成五份且多一个
+//				remaining = remaining - (remaining - 1) / 5 - 1; // 扔掉一个，拿走一份
+//			}
+//			else {
+//				valid = 0; // 如果不能满足条件，标记为无效
+//				break;
+//			}
+//		}
+//		if (valid) { // 如果当前桃子数量有效，结束循环
+//			found = 1;
+//		}
+//	}
+//	printf("海滩上原来最少有 %d 个桃子。\n", peaches); // 输出结果
+//	return 0;
+//}
 
-int main() {
-	char str1[MAX_LEN], str2[MAX_LEN], str3[MAX_LEN];
+//81题目：809*??=800*??+9*?? 
+// 其中??代表的两位数,
+// 809*??为四位数
+// ，8*??的结果为两位数，
+// 9*??的结果为3位数
+// 。求??代表的两位数，及809*??后的结果。
+//int main() {
+//
+//	for (int i = 10; i < 100; i++)
+//	{
+//		if (809 * i >= 1000 && 809 * i < 10000 && 8 * i >= 10 && 8 * i < 100 && 9 * i >= 100 && 9 * i < 1000)//吧表达式写在前面，判定值写在后面
+//		{
+//			printf("??代表的两位数为%d，809*??的结果为%d\n", i, 809 * i);
+//		}
+//	}
+//
+//	return 0;
+//}
 
-	// 提示用户输入字符串
-	printf("请输入3个字符串，每个字符串以回车结束:\n");
+//82八进制转换为十进制
+//#include <math.h>
+//int main()
+//{
+//	char  number[100];
+//
+//	printf("请输入一个八进制数：\n");
+//	scanf("%s", &number);
+//	int length = strlen(number);
+//	int sum = 0;
+//	for (int i = 0; i < length; i++)
+//	{
+//		int digit = number[i] - '0';//将字符转化数字
+//		sum += digit * pow(8, length - 1 - i);
+//	}
+//	printf("转换后的十进制数为：%d\n", sum);
+//
+//}
 
-	// 使用 fgets 读取输入并去除换行符
-	fgets(str1, sizeof(str1), stdin);
-	str1[strcspn(str1, "\n")] = '\0'; // 去除换行符
+//83.求0—7所能组成的奇数个数。(八个数字位，每位只能取0-7)、
+//#include <math.h>
+//int main() {
+//	int sum = 0;
+//	for (int i = 1; i < 8; i++)
+//	{
+//		int currentCount = 0;
+//		if (i == 1)
+//		{
+//			currentCount = 4;//个位数只能是1,3,5,7
+//			sum += currentCount;
+//			printf("第%d为的奇数总数为%d\n", i, sum);
+//		}
+//		else if (i == 2)
+//		{
+//			currentCount = 4 * 7;//十位数有1-7七种选择，个位数只能是1,3,5,7
+//			sum += currentCount;
+//			printf("第%d为的奇数总数为%d\n", i, sum);
+//		}
+//		else
+//		{
+//			currentCount = 7 * 4 * pow(8, i - 2);
+//			sum += currentCount;
+//			printf("第%d为的奇数总数为%d\n", i, sum);
+//
+//		}
+//	}
+//	printf("0-7所能组成的奇数个数总和为%d\n", sum);
+//}
 
-	fgets(str2, sizeof(str2), stdin);
-	str2[strcspn(str2, "\n")] = '\0'; // 去除换行符
+//84.一个偶数总能表示为两个素数之和。
+//int distinguishPrime(int number) {
+//
+//	if (number == 1)
+//	{
+//		return 1;
+//	}
+//	for (int i = 2; i < number - 1; i++)
+//	{
+//		if (number % i == 0) {
+//			return 0;
+//		}
+//	}
+//	return 1;
+//}
+//void decomposeEventNumber(int number) {
+//
+//	for (int i = 1; i <= sqrt(number); i++)//sqrt(_In_ double _X) 开平方函数
+//	{
+//		if (distinguishPrime(i) && distinguishPrime(number - i))
+//		{
+//			printf("%d可由%d,%d两个素数组成", number, i, number - i);
+//		}
+//	}
+//}
+//int main() {
+//	int number;
+//	printf("请输入一个偶数");
+//	scanf("%d", &number);
+//	int flage = 1;
+//	while (flage == 1)
+//	{
+//		if (number % 2 == 0)
+//		{
+//			flage = 0;
+//			decomposeEventNumber(number);
+//		}
+//		else {
+//			printf("输入的不是偶数，请重新输入一个偶数：");
+//			scanf("%d", &number);
+//		}
+//	}
+//}
 
-	fgets(str3, sizeof(str3), stdin);
-	str3[strcspn(str3, "\n")] = '\0'; // 去除换行符
 
-	// 对字符串进行排序 
-	/*
-	两个字符串自左向右逐个字符相比（按 ASCII 值大小相比较），直到出现不同的字符或遇 \0 为止。如：
-1."A"<"B"
-2."A"<"AB"
-3."Apple"<"Banana"
-4."A"<"a"
-5."compare"<"computer"*/
-	if (strcmp(str1, str2) > 0) swap(str1, str2);
-	if (strcmp(str2, str3) > 0) swap(str2, str3);
-	if (strcmp(str1, str2) > 0) swap(str1, str2);
+//85.判断一个素数能整除多少个9
+//int distinguishPrime(int number) {
+//
+//	if (number == 1)
+//	{
+//		return 1;
+//	}
+//	for (int i = 2; i < number - 1; i++)
+//	{
+//		if (number % i == 0) {
+//			return 0;
+//		}
+//	}
+//	return 1;
+//}
+//int main() {
+//
+//	int number;
+//	printf("请输入一个素数:\n");
+//	scanf("%d", &number);
+//	int falge = 1;
+//	while (falge) {
+//		if (distinguishPrime(number) == 1)
+//		{
+//			falge = 0;
+//
+//			int falge2 = 1;
+//			long int countNumber = 9;
+//			int count = 1;
+//			while (falge2) {
+//				if (countNumber % number == 0)
+//				{
+//					falge2 = 0;
+//					printf("素数%d能整除%d个9组成的数%ld\n", number, count, countNumber);
+//
+//				}
+//				else
+//				{
+//					count++;
+//					countNumber = countNumber * 10 + 9;
+//
+//				}
+//			}
+//		}
+//		else
+//		{
+//			printf("请输入一个素数:\n");
+//			scanf("%d", &number);
+//		}
+//	}
+//
+//	return 0;
+//}
 
-	// 输出排序后的结果
-	printf("排序后的结果为：\n");
-	printf("%s\n%s\n%s\n", str1, str2, str3);
 
-	return 0;
-}
+//86.两个字符串连接程序 。
+//int main() {
+//	char str1[100];
+//	char str2[100];
+//	printf("请输入第一个字符串：\n");
+//	scanf("%s", str1);
+//	printf("请输入第二个字符串：\n");
+//	scanf("%s", str2);
+//	//找到第一个字符串的结尾
+//	int length1 = strlen(str1);
+//	//将第二个字符串连接到第一个字符串的结尾
+//	for (int i = 0; i <= strlen(str2); i++) {
+//		str1[length1 + i] = str2[i];
+//	}
+//	printf("连接后的字符串为：%s\n", str1);
+//	return 0;
+//}
 
-// 交换两个字符串的内容
-void swap(char* str1, char* str2) {
-	char temp[MAX_LEN];
-	strcpy(temp, str1); // 将 str1 复制到临时字符串 temp
-	strcpy(str1, str2); // 将 str2 复制到 str1
-	strcpy(str2, temp); // 将 temp 复制到 str2
-}
+
+//87.回答结果（结构体变量传递）。
+//struct MyStruct
+//{
+//	int x;
+//	char y[100];
+//};
+//
+//void handeleChangeStrctInfunction(MyStruct object) {
+//	object.x = 20;
+//	strcpy(object.y, "Changed in function");
+//	printf("x: %d, y: %s\n", object.x, object.y);
+//}
+//
+//int main() {
+//	MyStruct demo;
+//	demo.x = 10;
+//	strcpy(demo.y, "Hello, World!");
+//	printf("x: %d, y: %s\n", demo.x, demo.y);
+//	handeleChangeStrctInfunction(demo);
+//	printf("x: %d, y: %s\n", demo.x, demo.y);
+//}
+
+//88.读取7个数（1—50）的整数值，每读取一个值，程序打印出该值个数的
+//int main()
+//{
+//	int n, i, j;
+//	printf("请输入数字:\n");
+//
+//	for (i = 0; i < 7; i++)
+//	{
+//		scanf("%d", &n);
+//		if (n > 50) {
+//			printf("请重新输入:\n");
+//			i--;
+//		}
+//		else
+//		{
+//			for (j = 0; j < n; j++)
+//				printf("*");
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//89.题目：某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，
+// 加密规则如下： 每位数字都加上5,然后用和除以10的余数代替该数字，再将第一位和第四位交换，第二位和第三位交换。
+//int main() {
+//	puts("请输入一个四位整数：");
+//	int number;
+//	scanf("%d", &number);
+//	while (number < 1000 && number >= 10000)
+//	{
+//		puts("请输入一个四位整数：");
+//		scanf("%d", &number);
+//	}
+//	int digits[4];
+//	//提取每一位数字
+//	for (int i = 0; i < 4; i++)
+//	{
+//		digits[i] = ((number % 10) + 5) % 10;
+//		number = number / 10;
+//	}
+//	printf("加密后的数字为：%d%d%d%d\n", digits[0], digits[1], digits[2], digits[3]);
+//}
+
+//90.专升本一题，读结果。
+//#define M 5
+//int main()
+//{
+//	int a[M] = { 1,2,3,4,5 };
+//	int i, j, t;
+//	i = 0; j = M - 1;
+//	while (i < j)
+//	{
+//		t = *(a + i);
+//		*(a + i) = *(a + j);
+//		*(a + j) = t;
+//		i++; j--;
+//	}
+//	for (i = 0; i < M; i++) {
+//		printf("%d\n", *(a + i));
+//	}
+//
+//}
+//取反输出结果为5 4 3 2 1
+
+//94.猜谜游戏
+// 处理是否继续游戏的逻辑
+//int ask_to_play_again() {
+//	char begin;
+//	printf("需要挑战最高级别不？Y/N \n");
+//	scanf(" %c", &begin);  // 注意前面有个空格，确保跳过上次输入的换行符
+//	if (begin == 'Y' || begin == 'y') {
+//		return 1;  // 用户选择继续游戏
+//	}
+//	printf("谢谢，再见!\n");
+//	return 0;  // 用户选择退出游戏
+//}
+//
+//// 游戏的主体逻辑
+//void caizi(void) {
+//	int n;
+//	int count = 1;
+//	srand((unsigned int)time(NULL));  // 更严谨地处理随机数种子
+//	int m = (rand() % 100) + 1;
+//
+//	printf("游戏开始，请输入数字:\n");
+//
+//	while (1) {
+//		scanf("%d", &n);
+//
+//		if (n == m) {
+//			printf("猜中了，使用了 %d 次！\n", count);
+//
+//			// 根据猜测次数，给出不同的评价
+//			if (count == 1) {
+//				printf("你是神级人物了！膜拜\n");
+//			}
+//			else if (count <= 5) {
+//				printf("你是王级人物了！非常赞\n");
+//			}
+//			else if (count <= 10) {
+//				printf("你是大师级人物了！狂赞\n");
+//			}
+//			else if (count <= 15) {
+//				printf("你是钻石级人物了！怒赞\n");
+//			}
+//			else {
+//				printf("你的技术还有待提高哦！\n");
+//			}
+//
+//			// 询问是否继续游戏
+//			if (ask_to_play_again()) {
+//				caizi();  // 重新开始游戏
+//			}
+//			break;
+//		}
+//
+//		else if (n < m) {
+//			puts("太小了!");
+//			puts("重新输入:");
+//		}
+//		else {
+//			puts("太大了!");
+//			puts("重新输入:");
+//		}
+//
+//		count++;  // 计数器
+//	}
+//}
+//
+//int main(void) {
+//	caizi();
+//	return 0;
+//}
+
+//95.简单的结构体应用实例。
+//struct Progrmming
+//{
+//	float number;
+//	char* name;
+//};
+//
+//int main() {
+//	Progrmming demo;
+//	/*strcpy(demo.name, "C Programming");*/
+//	char string[] = "C Programming";
+//	demo.name = string;//string为char类型的指针，指向字符串常量的首地址
+//	demo.number = 99.5;
+//	printf("Name: %s\n", demo.name);
+//	printf("Number: %.2f\n", demo.number);
+//}
+
+//96.计算字符串中子串出现的次数 。
+//int main() {
+//	char str[100];
+//	char substr[100];
+//	printf("请输入一个字符串：\n");
+//	scanf("%s", str);
+//	printf("请输入要查找的子串：\n");
+//	scanf("%s", substr);
+//	int count = 0;
+//	int lenstr, lensubstr;
+//	lenstr = strlen(str);
+//	lensubstr = strlen(substr);
+//	for (size_t i = 0; i <= lenstr - lensubstr; i++)
+//	{
+//		for (int j = 0; j < lensubstr; j++)
+//		{
+//			if (str[i + j] == substr[j]) {
+//				if (j == lensubstr - 1)
+//				{
+//					count++;
+//				}
+//				continue;
+//			}
+//			else
+//			{
+//				break;
+//			}
+//		}
+//	}
+//	printf("子串出现的次数为：%d\n", count);
+//}
+
+//97.从键盘输入一些字符，逐个把它们送到磁盘上去，直到输入一个#为止。
+//int main() {
+//	FILE* fp;
+//	char ch;
+//	fp = fopen("data.txt", "w");//w,写入方式打开文件
+//	if (fp == NULL) {
+//		printf("无法打开文件。\n");
+//		return 1;
+//	}
+//	else
+//	{
+//		printf("请输入一些字符，输入#结束：\n");
+//		while (1) {
+//			ch = getchar();
+//			if (ch == '#') {
+//				break;
+//			}
+//			fputc(ch, fp);//写入字符流
+//		}
+//		fclose(fp);
+//		printf("字符已写入文件output.txt。\n");
+//		return 0;
+//	}
+//}
+
+//98.从键盘输入一个字符串，将小写字母全部转换成大写字母，然后输出到一个磁盘文件"test"中保存。 输入的字符串以！结束。
+//int main() {
+//	FILE* fp;
+//	FILE* fp2 = fopen("data2.txt", "r");//r,读取方式打开文件
+//	char currentStr[100];
+//	char fileStr[100];
+//	fp = fopen("data.txt", "w");//w,写入方式打开文件
+//	if (fp == NULL)
+//	{
+//		printf("无法打开文件\n");
+//		return 0;
+//	}
+//	else {
+//		printf("请输入一个字符串，以！结束：\n");
+//		scanf("%s", currentStr);
+//		for (int i = 0; i < strlen(currentStr); i++)
+//		{
+//			if (currentStr[i] > 'a' && currentStr[i] < 'z') {
+//				currentStr[i] = currentStr[i] - 32;//-('a'-'A');
+//			}
+//		}
+//		/*fprintf(fp, "%s\n", currentStr);*/ //写入字符串流
+//		fputs(currentStr, fp);//写入字符串流
+//		fclose(fp);
+//		//
+//		fgets(fileStr, 255, fp2);
+//		printf("当前文件中的字符串为：%s\n", fileStr);
+//		fclose(fp2);
+//		return 1;
+//	}
+//
+//}
+
+//99.有两个磁盘文件A和B,各存放一行字母，要求把这两个文件中的信息合并（按字母顺序排列），输出到一个新文件C中。
+//int main() {
+//	FILE* fpA;
+//	FILE* fpB;
+//	FILE* fpC;
+//	char strA[100], strB[100], strC[100];
+//	fpA = fopen("data.txt", "r");
+//	if (fpA != NULL)
+//	{
+//		fgets(strA, 100, fpA);
+//		fclose(fpA);
+//		fpB = fopen("data2.txt", "r");
+//		if (fpB != NULL) {
+//			fgets(strB, 100, fpB);
+//			fclose(fpB);
+//			fpC = fopen("data3.txt", "w");
+//			if (fpC != NULL)
+//			{
+//				strcat(strC, strA);
+//				strcat(strC, strB);
+//				printf("合并后的字符串为：%s\n", strC);
+//				//
+//				for (int i = 0; i < strlen(strC) - 2; i++)
+//				{
+//
+//					for (int j = i + 1; j < strlen(strC) - 1; j++)
+//					{
+//
+//						if (strC[i] > strC[j])
+//						{
+//							int temp;
+//							temp = strC[i];
+//							strC[i] = strC[j];
+//							strC[j] = temp;
+//						}
+//					}
+//				}
+//				printf("排序后的字符串为：%s\n", strC);
+//				fputs(strC, fpC);//写入字符串流	
+//				printf("合并并排序后的字符串已写入文件data3.txt。\n");
+//				fclose(fpC);
+//				return 1;
+//			}
+//			else
+//			{
+//				printf("文件打开失败03\n");
+//				return 0;
+//			}
+//
+//		}
+//		else
+//		{
+//			printf("文件打开失败02\n");
+//			return 0;
+//		}
+//
+//	}
+//	else
+//	{
+//		printf("文件打开失败01\n");
+//		return 0;
+//	}
+//}
+
+//100.有五个学生，每个学生有3门课的成绩，从键盘输入以上数据（包括学生号，姓名，三门课成绩），
+// 计算出平均成绩，况原有的数据和计算出的平均分数存放在磁盘文件"stud"中。
+//typedef struct {
+//    int ID;
+//    int math;
+//    int English;
+//    int C;
+//    int avargrade;
+//    char name[20];
+//}Stu;
+//int main()
+//{
+//    FILE* fp;
+//    Stu stu[5];
+//    int i, avargrade = 0;
+//    printf("请输入5个同学的信息：学生号，姓名，3门成绩:\n");
+//    for (i = 0; i < 5; i++)
+//    {
+//        scanf("%d %s %d %d %d", &(stu[i].ID), stu[i].name, &(stu[i].math), &(stu[i].English), &(stu[i].C));
+//        stu[i].avargrade = (stu[i].math + stu[i].English + stu[i].C) / 3;
+//    }
+//
+//    if ((fp = fopen("stud", "w")) == NULL)
+//    {
+//        printf("error :cannot open file!\n");
+//        exit(0);
+//    }
+//    for (i = 0; i < 5; i++)
+//        fprintf(fp, "%d %s %d %d %d %d\n", stu[i].ID, stu[i].name, stu[i].math, stu[i].English,
+//            stu[i].C, stu[i].avargrade);
+//
+//    fclose(fp);
+//    // system("pause");
+//    return 0;
+//}

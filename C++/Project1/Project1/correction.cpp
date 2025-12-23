@@ -1,3 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
 ////第1 题 （10.0 分）
 ///*-----------------------------------
 //功能：根据整型形参m，计算如下公式的值：
@@ -254,3 +258,70 @@ examination.”。
 2). if ( *p == ' ' )
 3). *(p -1 ) = toupper( *( p - 1 ));
 */
+
+//int main() {
+//	int sum; //不附初值的时候，sum的值是随机的垃圾值，需要初始化为0
+//	//scanf("%d", &sum);
+//	for (int i = 2; i <= 100; i = i + 2)
+//	{
+//		sum += i;
+//	}
+//	printf("%d", sum);
+//}
+
+//int main() {
+//	/*	char* str = "hello world";*/ //指针str未分配内存空间
+//
+//
+//	//char* str;//指针str未分配内存空间,需要指定分配内存空间才能使用
+//	//char buffer[] = "hello world";
+//	//str = buffer;
+//	//printf("%s\n", str);
+//
+//	char str[] = "hello world"; //数组str分配了内存空间
+//	printf("%s\n", str);
+//
+//}
+
+//2025第三题
+
+//void concat(char* ch1, char* ch2) {
+//	while (*ch1 != '\0') {
+//		ch1++;
+//	}
+//	while (*ch2 != '\0') {
+//		*ch1 = *ch2;
+//		ch1++;
+//		ch2++;
+//	}
+//}
+//
+//int main() {
+//	char str1[12] = "hello";
+//	char str2[] = "world";
+//
+//	concat(str1, str2);
+//	printf("连接后的字符串为：%s\n", str1);
+//	return 0;
+//}
+
+////2025第四题
+//struct Student {
+//	char name[20];
+//	int id;
+//	float score;
+//};
+//int main() {
+//	Student stu;
+//	Student* p = &stu;
+//	printf("请输入学生的姓名：");
+//	scanf("%s", p->name);
+//	printf("请输入学生的学号：");
+//	scanf("%d", &p->id);
+//	printf("请输入学生的成绩：");
+//	scanf("%f", &p->score);
+//	printf("学生的信息如下：\n");
+//	printf("姓名：%s,id:%d,score:%.2f", p->name, p->id, p->score);
+//
+//
+//}

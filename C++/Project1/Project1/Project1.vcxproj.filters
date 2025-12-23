@@ -135,10 +135,20 @@
     <ClCompile Include="test.cpp">
       <Filter>Source Files\题源\经典100题</Filter>
     </ClCompile>
+    <ClCompile Include="data3.txt">
+      <Filter>Source Files\题源\经典100题</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="C.txt" />
     <Text Include="data.txt">
-      <Filter>Source Files\demo01</Filter>
+      <Filter>Source Files\题源\经典100题</Filter>
+    </Text>
+    <Text Include="data02.txt">
+      <Filter>Source Files\题源\经典100题</Filter>
+    </Text>
+    <Text Include="data03.txt">
+      <Filter>Source Files\题源\经典100题</Filter>
     </Text>
   </ItemGroup>
 </Project>
